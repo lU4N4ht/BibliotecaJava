@@ -1,7 +1,7 @@
 package br.senai.sp.jandira.biblioteca.Model;
 
 import java.util.Scanner;
-public class UserRegister {
+public class Register {
     Scanner teclado = new Scanner(System.in);
     Client client = new Client();
     Librarian librarian = new Librarian();
@@ -35,16 +35,17 @@ public class UserRegister {
         } else {
             System.out.print("| What's your phone number: ");
             client.phoneNumber = teclado.nextInt();
+
             teclado.nextLine();
 
             System.out.print("| What's your address: ");
             client.address = teclado.nextLine();
 
             System.out.print("| What's your email: ");
-            client.email = teclado.nextLine();
+            client.email = teclado.next();
 
             System.out.print("| Insert your password: ");
-            client.password = teclado.nextLine();
+            client.password = teclado.next();
         }
         System.out.println("+---------------------------------------------------------------+");
         return client;
@@ -54,11 +55,10 @@ public class UserRegister {
         System.out.print("| What's your name: ");
         librarian.name = teclado.nextLine();
         System.out.print("| What's your email: ");
-        librarian.email = teclado.nextLine();
+        librarian.email = teclado.next();
         System.out.print("| Insert your password: ");
-        librarian.password = teclado.nextLine();
+        librarian.password = teclado.next();
         System.out.println("+---------------------------------------------------------------+");
-
         return librarian;
     }
 }
