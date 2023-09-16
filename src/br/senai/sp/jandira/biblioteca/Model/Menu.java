@@ -9,7 +9,6 @@ public class Menu {
     Login userlogin = new Login();
 
     boolean validRegister = true;
-
     boolean exit = false;
     public void menuUser() {
         while (!exit) {
@@ -44,7 +43,10 @@ public class Menu {
     }
     public void choiceLibrary() {
 
-        if(userregister.client == "client"){
+        boolean userMenuType = true;
+
+        if(userMenuType == true){
+
             while (!exit) {
                 System.out.println("+______________________________________________________+");
                 System.out.println("| Chose one option.....................................| ");
@@ -63,7 +65,10 @@ public class Menu {
                 }
             }
 
-        } else if (userregister.choice == "librarian"){
+        }
+        userMenuType = false;
+
+        if (userMenuType == false){
             System.out.println("+______________________________________________________+");
             System.out.println("| Chose one option.....................................| ");
             System.out.println("| 1 - Register a book..................................|");

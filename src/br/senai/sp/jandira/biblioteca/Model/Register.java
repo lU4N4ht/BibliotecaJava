@@ -33,19 +33,14 @@ public class Register {
         if(client.age < 18){
             System.err.println("You have to be of legal age to complete the register");
         } else {
-            System.out.print("| What's your phone number: ");
-            client.phoneNumber = teclado.nextInt();
-
-            teclado.nextLine();
-
             System.out.print("| What's your address: ");
             client.address = teclado.nextLine();
 
             System.out.print("| What's your email: ");
-            client.email = teclado.next();
+            client.email = teclado.nextLine();
 
             System.out.print("| Insert your password: ");
-            client.password = teclado.next();
+            client.password = teclado.nextInt();
         }
         System.out.println("+---------------------------------------------------------------+");
         return client;

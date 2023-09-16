@@ -16,35 +16,40 @@ public class Login {
 
         switch (choice.toLowerCase()) {
             case "client":
-                ClientLogin();
+                ClientLogin(client);
                 break;
             case "librarian":
-                LibrarianLogin();
+                LibrarianLogin(librarian);
                 break;
         }
     }
-    public Client ClientLogin() {
+    public Client ClientLogin(Client client) {
         System.out.println("+-------------------- CLIENT'S LOGIN --------------------+");
         System.out.print("| What's your email: ");
         email = teclado.nextLine();
         System.out.print("| Insert your password: ");
         password = teclado.nextLine();
 
-        if (password != client.password || email != client.email){
+        if (password.equals(client.password) && email.equals(client.email)){
+            System.out.println("Login successful!");
+        } else{
             System.err.println("Your password or your email is WRONG!");
         }
         System.out.println("+---------------------------------------------------------+");
         return client;
     }
-    public Librarian LibrarianLogin() {
+    public Librarian LibrarianLogin(Librarian librarian) {
         System.out.println("+-------------------- LIBRARIAN'S LOGIN --------------------+");
         System.out.print("| What's your email: ");
         email = teclado.nextLine();
         System.out.print("| Insert your password: ");
         password = teclado.nextLine();
 
-        if (password != librarian.password || email != librarian.email){
+        if (password.equals(librarian.password) && email.equals(librarian.email)){
             System.err.println("Your password or your email is WRONG!");
+
+        } else {
+            System.out.println("Login successful!");
         }
         System.out.println("+---------------------------------------------------------+");
         return librarian;

@@ -1,7 +1,10 @@
 package br.senai.sp.jandira.biblioteca.Model;
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 public class Book {
     Scanner teclado = new Scanner(System.in);
+    public List<Book> books = new ArrayList<>();
     public String bookTitle ,
             bookAuthor,
             bookGenre,
@@ -22,10 +25,5 @@ public class Book {
         isbn = teclado.nextInt();
         System.out.println("+---------------------------------------------------------------+");
     }
-    public void setName(String bookTitle){
-        this.bookTitle = bookTitle;
-    }
-    public String getName(){
-        return bookTitle;
-    }
+
 }
