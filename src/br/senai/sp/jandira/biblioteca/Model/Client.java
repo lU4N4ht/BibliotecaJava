@@ -3,6 +3,6 @@ public class Client {
     public String name,
             address;
     public int age;
-    public Object password,
+    public String password,
     email;
 }

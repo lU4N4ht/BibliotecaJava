@@ -1,15 +1,14 @@
 package br.senai.sp.jandira.biblioteca.Model;
 
 import java.util.Scanner;
+
 public class Menu {
     Scanner teclado = new Scanner(System.in);
-
     Register userregister = new Register();
-
     Login userlogin = new Login();
-
-    boolean validRegister = true;
+    Book book = new Book();
     boolean exit = false;
+
     public void menuUser() {
         while (!exit) {
             System.out.println("+______________________________________________________+");
@@ -25,7 +24,7 @@ public class Menu {
             System.out.println("+______________________________________________________+");
             int menuChoice = teclado.nextInt();
 
-            switch (menuChoice){
+            switch (menuChoice) {
                 case 1:
                     userregister.choicesRegister();
                     break;
@@ -41,11 +40,12 @@ public class Menu {
             }
         }
     }
+
     public void choiceLibrary() {
 
-        boolean userMenuType = true;
+        boolean choice = true;
 
-        if(userMenuType == true){
+        if (!choice) {
 
             while (!exit) {
                 System.out.println("+______________________________________________________+");
@@ -64,11 +64,7 @@ public class Menu {
                         break;
                 }
             }
-
-        }
-        userMenuType = false;
-
-        if (userMenuType == false){
+        } else {
             System.out.println("+______________________________________________________+");
             System.out.println("| Chose one option.....................................| ");
             System.out.println("| 1 - Register a book..................................|");
@@ -78,25 +74,12 @@ public class Menu {
 
             switch (libraryChoice) {
                 case 1:
-                    while (validRegister) {
-                        System.out.println("Do you want to register another book? [Y - N]");
-                        String answer = teclado.nextLine();
-
-                        if (answer.equalsIgnoreCase("S")) {
-                            Book book = new Book();
-                            book.bookRegister();
-                        } else if (answer.equalsIgnoreCase("N")) {
-                            validRegister = false;
-                        } else {
-                            System.out.println("Tecla Invalida");
-                        }
-                    }
+                    book.addBook();
                     break;
                 case 2:
                     exit = true;
                     break;
             }
-
         }
     }
 }

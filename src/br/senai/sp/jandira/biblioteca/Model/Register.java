@@ -30,21 +30,22 @@ public class Register {
         client.age = teclado.nextInt();
         teclado.nextLine();
 
-        if(client.age < 18){
+        if (client.age < 18) {
             System.err.println("You have to be of legal age to complete the register");
         } else {
             System.out.print("| What's your address: ");
             client.address = teclado.nextLine();
 
             System.out.print("| What's your email: ");
-            client.email = teclado.nextLine();
+            client.email = teclado.next();
 
             System.out.print("| Insert your password: ");
-            client.password = teclado.nextInt();
+            client.password = teclado.next();
         }
         System.out.println("+---------------------------------------------------------------+");
         return client;
     }
+
     public Librarian LibrarianRegister() {
         System.out.println("+-------------------- LIBRARIAN'S REGISTER --------------------+");
         System.out.print("| What's your name: ");
@@ -57,5 +58,3 @@ public class Register {
         return librarian;
     }
 }
-
-
