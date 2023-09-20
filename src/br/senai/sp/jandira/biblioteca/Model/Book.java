@@ -3,16 +3,19 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.List;
 public class Book {
-    public List<Book> books = new ArrayList<>();
+    public List <Book> books = new ArrayList<>();
     Scanner teclado = new Scanner(System.in);
-    public String bookTitle ,
+    public String bookTitle,
             bookAuthor,
             bookGenre,
-            description;
+            description,
+            choice;
     public int isbn;
 
     public void addBook() {
-        do {
+
+        for (; choice.equalsIgnoreCase("Y"); ) {
+
             Book book = new Book();
 
             System.out.println("+-------------------- BOOK REGISTER --------------------+");
@@ -31,6 +34,21 @@ public class Book {
 
             System.out.println("------------------------------------------------------");
             System.out.println("Do you want to register another book? (Y/N): ");
-        } while (teclado.nextLine().equalsIgnoreCase("Y"));
+            choice = teclado.nextLine();
+            if (choice.equalsIgnoreCase("N")) {
+                break;
+
+            }
+        }
+    }
+
+    public void listBook() {
+        for (Book book : books) {
+            System.out.println(book.bookAuthor);
+            System.out.println(book.bookGenre);
+            System.out.println(book.bookTitle);
+            System.out.println(book.isbn);
+            System.out.println(" ");
+        }
     }
 }

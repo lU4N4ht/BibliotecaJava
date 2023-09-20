@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class Menu {
     Scanner teclado = new Scanner(System.in);
-    Register userregister = new Register();
-    Login userlogin = new Login();
+    Register userRegister = new Register();
+    Login userLogin = new Login();
     Book book = new Book();
     boolean exit = false;
 
@@ -26,10 +26,10 @@ public class Menu {
 
             switch (menuChoice) {
                 case 1:
-                    userregister.choicesRegister();
+                    userRegister.choicesRegister();
                     break;
                 case 2:
-                    userlogin.choicesLogin();
+                    userLogin.choicesLogin();
                     break;
                 case 3:
                     choiceLibrary();
@@ -45,7 +45,9 @@ public class Menu {
 
         boolean choice = true;
 
-        if (!choice) {
+        if (choice == true) {
+
+            choice = false;
 
             while (!exit) {
                 System.out.println("+______________________________________________________+");
@@ -57,12 +59,13 @@ public class Menu {
 
                 switch (libraryChoice) {
                     case 1:
-
+                        book.listBook();
                         break;
                     case 2:
                         exit = true;
                         break;
                 }
+
             }
         } else {
             System.out.println("+______________________________________________________+");

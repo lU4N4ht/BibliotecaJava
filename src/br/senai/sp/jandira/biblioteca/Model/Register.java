@@ -5,14 +5,14 @@ public class Register {
     Scanner teclado = new Scanner(System.in);
     Client client = new Client();
     Librarian librarian = new Librarian();
-    public String choice;
+    public String choiceRegister, choiceLogin;
 
     public void choicesRegister() {
         System.out.println("| Choose who you want to register (Client | Librarian)|");
-        choice = teclado.nextLine();
+        choiceRegister = teclado.nextLine();
         System.out.println(" ");
 
-        switch (choice.toLowerCase()) {
+        switch (choiceRegister.toLowerCase()) {
             case "client":
                 ClientRegister();
                 break;

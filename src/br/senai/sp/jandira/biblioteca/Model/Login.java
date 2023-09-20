@@ -1,13 +1,12 @@
 package br.senai.sp.jandira.biblioteca.Model;
 
 import java.util.Scanner;
-
 public class Login {
-    Scanner teclado = new Scanner(System.in);
     Client client = new Client();
     Librarian librarian = new Librarian();
     public String email, password;
     public String choice;
+    Scanner teclado = new Scanner(System.in);
     public void choicesLogin() {
         System.out.println("| Choose who you want to login (Client | Librarian)|");
         choice = teclado.nextLine();
@@ -29,7 +28,7 @@ public class Login {
         System.out.print("| Insert your password: ");
         password = teclado.nextLine();
 
-        if (client.password.equals(password) && client.email.equals(email)){
+        if (password.equals(client.password) && email.equals(client.email)){
             System.out.println("| Login successful!");
         } else{
             System.err.println("Your password or your email is WRONG!");
@@ -40,15 +39,15 @@ public class Login {
     public Librarian LibrarianLogin() {
         System.out.println("+-------------------- LIBRARIAN'S LOGIN --------------------+");
         System.out.print("| What's your email: ");
-        email = teclado.nextLine();
+        librarian.email = teclado.nextLine();
         System.out.print("| Insert your password: ");
-        password = teclado.nextLine();
+        librarian.password = teclado.nextLine();
 
         if (password.equals(librarian.password) && email.equals(librarian.email)){
-            System.err.println("Your password or your email is WRONG!");
+            System.out.println("| Login successful!");
 
         } else {
-            System.out.println("| Login successful!");
+            System.err.println("Your password or your email is WRONG!");
         }
         System.out.println("+---------------------------------------------------------+");
         return librarian;
